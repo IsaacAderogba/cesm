@@ -1,20 +1,20 @@
 import { State } from "@state/State";
 
 export interface NFAProps {
-  inState: State;
-  outState: State;
+  inputState: State;
+  outputState: State;
 }
 
 export class NFA {
-  inState: NFAProps["inState"];
-  outState: NFAProps["outState"];
+  inputState: NFAProps["inputState"];
+  outputState: NFAProps["outputState"];
 
   constructor(props: NFAProps) {
-    this.inState = props.inState;
-    this.outState = props.outState;
+    this.inputState = props.inputState;
+    this.outputState = props.outputState;
   }
 
   test(string: string) {
-    return this.inState.test(string);
+    return this.inputState.test(string);
   }
 }

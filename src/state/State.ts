@@ -6,7 +6,7 @@ export class State {
   isAccepting: StateProps["isAccepting"];
   private transitionsMap: Map<string, State[]> = new Map();
 
-  constructor(props: StateProps) {
+  constructor(props: StateProps = { isAccepting: false }) {
     this.isAccepting = props.isAccepting;
   }
 
