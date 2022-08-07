@@ -21,6 +21,7 @@
       "@factories/*": ["src/factories/*"],
       "@machines/*": ["src/machines/*"],
       "@state/*": ["src/state/*"],
+      "@utils/*": ["src/utils/*"],
     }
   },
   "include": ["src"],
