@@ -19,4 +19,8 @@ export class State {
   getTransition(symbol: string): State[] {
     return this.transitionsMap.get(symbol) || [];
   }
+
+  test(string: string, visited = new Set()): boolean {
+    return true;
+  }
 }

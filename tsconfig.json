@@ -18,9 +18,8 @@
     "baseUrl": ".",
     "outDir": "./dist",
     "paths": {
-      "@dfa/*": ["src/dfa/*"],
+      "@factories/*": ["src/factories/*"],
       "@machines/*": ["src/machines/*"],
-      "@nfa/*": ["src/nfa/*"],
       "@state/*": ["src/state/*"],
     }
   },
