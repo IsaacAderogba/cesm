@@ -14,8 +14,8 @@ export const andPair = (first: NFA, second: NFA): NFA => {
 };
 
 export const and = (first: NFA, ...rest: NFA[]): NFA => {
-  for (const fragment of rest) {
-    first = andPair(first, fragment);
+  for (const machine of rest) {
+    first = andPair(first, machine);
   }
 
   return first;

@@ -17,8 +17,8 @@ export const orPair = (first: NFA, second: NFA): NFA => {
 };
 
 export const or = (first: NFA, ...rest: NFA[]): NFA => {
-  for (const fragment of rest) {
-    first = orPair(first, fragment);
+  for (const machine of rest) {
+    first = orPair(first, machine);
   }
 
   return first;
