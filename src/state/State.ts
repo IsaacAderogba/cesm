@@ -6,11 +6,15 @@ export interface StateProps {
 
 export class State {
   id = uuidv4();
-  isAccepting: StateProps["isAccepting"];
+  private isAccepting!: StateProps["isAccepting"];
   private transitionsMap: Map<string, State[]> = new Map();
 
   constructor(props: StateProps = { isAccepting: false }) {
-    this.isAccepting = props.isAccepting;
+    this.setProps(props);
+  }
+
+  setProps(props: Partial<StateProps> = {}) {
+    Object.assign(this, props);
   }
 
   addTransition(symbol: string, state: State): void {
