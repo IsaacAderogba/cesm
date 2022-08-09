@@ -6,7 +6,7 @@ module.exports = defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "Resm",
+      name: "Cesm",
       fileName: format => `index.${format}.js`,
       formats: ["es", "cjs"],
     },
