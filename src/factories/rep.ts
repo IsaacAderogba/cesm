@@ -1,8 +1,8 @@
-import { NFA } from "@machines/NFA";
+import { Machine } from "@machine/Machine";
 import { State } from "@state/State";
 import { EPSILON } from "@utils/symbols";
 
-export const rep = (machine: NFA): NFA => {
+export const rep = (machine: Machine): Machine => {
   const inputState = new State();
   const outputState = new State({ isAccepting: true });
 
@@ -12,5 +12,5 @@ export const rep = (machine: NFA): NFA => {
   outputState.addTransition(EPSILON, machine.inputState);
 
   machine.outputState.setProps({ isAccepting: false });
-  return new NFA({ inputState, outputState });
+  return new Machine({ inputState, outputState });
 };
