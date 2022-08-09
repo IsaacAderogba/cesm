@@ -11,6 +11,9 @@
     "LICENSE",
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint:staged": "lint-staged",
     "prepare": "husky install",
