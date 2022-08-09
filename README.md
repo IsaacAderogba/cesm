@@ -13,7 +13,7 @@
 CESM can be installed as a library from NPM.
 
 ```Bash
-npm install cesm
+npm install ce-sm
 ```
 
 You can then use CESM’s functional API to construct different content expressions. The following demonstrates how we might construct `xy*|z`.
@@ -48,7 +48,7 @@ In CESM, a *state* is a node in the state machine graph. Each graph can only hav
 For example, a simple character can be built with just two states:
 
 ```typescript
-import { Machine, State } from "cesm";
+import { Machine, State } from "ce-sm";
 
 export const char = (symbol: string): Machine => {
   const inputState = new State();
@@ -76,7 +76,7 @@ On most occassions, you won’t be dealing with individual states. Rather, you�
 The real strength of a machine is in their composability. Expressions such as `xy*|z` are compositions of the following machines:
 
 ```typescript
-import { or, and, char, rep } from "cesm";
+import { or, and, char, rep } from "ce-sm";
 
 const re = or(
   and(
