@@ -1,5 +1,5 @@
 {
-  "name": "@iaworkspace/cesm",
+  "name": "@iatools/cesm",
   "version": "0.3.0",
   "description": "",
   "main": "dist/index.js",
