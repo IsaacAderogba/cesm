@@ -5,9 +5,12 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "np": {
-    "contents": "dist"
-  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
   "scripts": {
     "lint:staged": "lint-staged",
     "prepare": "husky install",
