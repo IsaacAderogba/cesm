@@ -48,14 +48,14 @@ In CESM, a *state* is a node in the state machine graph. Each graph can only hav
 For example, a simple character can be built with just two states:
 
 ```typescript
-import { Machine, State } from "@iaworkspace/cesm";
+import { NFA, State } from "@iaworkspace/cesm";
 
-export const char = (symbol: string): Machine => {
+export const char = (symbol: string): NFA => {
   const inputState = new State();
   const outputState = new State({ isAccepting: true });
   inputState.addTransition(symbol, outputState);
 
-  return new Machine({ inputState, outputState });
+  return new NFA({ inputState, outputState });
 };
 ```
 
@@ -71,7 +71,9 @@ On most occassions, you wonâ€™t be dealing with individual states. Rather, youâ€
 
 #### Machines
 
-`Machine` is a simple wrapper over an `inputState` and an `outputState`. On most occassions, you'll be interacting with the `test` method on such machines that return `true` for valid patterns and `false` for invalid ones.
+CESM supports building an `NFA` state machine.
+
+A `Machine` is a simple wrapper over an `inputState` and an `outputState`. On most occassions, you'll be interacting with the `test` method on such machines that return `true` for valid patterns and `false` for invalid ones.
 
 The real strength of a machine is in their composability. Expressions such as `xy*|z` are compositions of the following machines:
 

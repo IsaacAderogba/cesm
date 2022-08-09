@@ -6,8 +6,8 @@ export { or } from "./factories/or";
 export { plus } from "./factories/plus";
 export { rep } from "./factories/rep";
 
-export { Machine } from "./machine/Machine";
-export type { MachineProps } from "./machine/Machine";
+export { NFA } from "./machine/NFA";
+export type { NFAProps } from "./machine/NFA";
 
 export { State } from "./state/State";
 export type { StateProps } from "./state/State";

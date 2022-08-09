@@ -1,15 +1,15 @@
 import { State } from "@state/State";
 
-export interface MachineProps {
+export interface NFAProps {
   inputState: State;
   outputState: State;
 }
 
-export class Machine {
-  inputState: MachineProps["inputState"];
-  outputState: MachineProps["outputState"];
+export class NFA {
+  inputState: NFAProps["inputState"];
+  outputState: NFAProps["outputState"];
 
-  constructor(props: MachineProps) {
+  constructor(props: NFAProps) {
     this.inputState = props.inputState;
     this.outputState = props.outputState;
   }

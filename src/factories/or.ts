@@ -1,8 +1,8 @@
-import { Machine } from "@machine/Machine";
+import { NFA } from "@machine/NFA";
 import { State } from "@state/State";
 import { EPSILON } from "@utils/symbols";
 
-export const orPair = (first: Machine, second: Machine): Machine => {
+export const orPair = (first: NFA, second: NFA): NFA => {
   const inputState = new State();
   inputState.addTransition(EPSILON, first.inputState);
   inputState.addTransition(EPSILON, second.inputState);
@@ -13,10 +13,10 @@ export const orPair = (first: Machine, second: Machine): Machine => {
 
   first.outputState.setProps({ isAccepting: false });
   second.outputState.setProps({ isAccepting: false });
-  return new Machine({ inputState, outputState });
+  return new NFA({ inputState, outputState });
 };
 
-export const or = (first: Machine, ...rest: Machine[]): Machine => {
+export const or = (first: NFA, ...rest: NFA[]): NFA => {
   for (const machine of rest) {
     first = orPair(first, machine);
   }

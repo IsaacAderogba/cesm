@@ -1,7 +1,7 @@
-import { Machine } from "@machine/Machine";
+import { NFA } from "@machine/NFA";
 import { eps } from "./eps";
 import { or } from "./or";
 
-export const opt = (machine: Machine): Machine => {
+export const opt = (machine: NFA): NFA => {
   return or(machine, eps());
 };

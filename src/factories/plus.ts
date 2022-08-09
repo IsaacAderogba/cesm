@@ -1,7 +1,7 @@
-import { Machine } from "@machine/Machine";
+import { NFA } from "@machine/NFA";
 import { and } from "./and";
 import { rep } from "./rep";
 
-export const plus = (machine: Machine): Machine => {
+export const plus = (machine: NFA): NFA => {
   return and(machine, rep(machine));
 };
